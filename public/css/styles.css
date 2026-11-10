@@ -1228,3 +1228,115 @@ select:disabled {
         width: 100%;
     }
 }
+
+/* ---------- Delete Property ---------- */
+
+.btn-danger {
+    background: #D94A4A;
+    color: #FFFFFF;
+    border: 1px solid #E66B6B;
+}
+
+.btn-danger:not(:disabled):hover {
+    background: #BE3434;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(217, 74, 74, 0.25);
+}
+
+.delete-modal {
+    width: min(450px, 92%);
+    max-height: 90vh;
+    margin: auto;
+    padding: 0;
+
+    background: #101921;
+    color: #FFFFFF;
+
+    border: 1px solid rgba(53, 224, 204, 0.4);
+    border-radius: 22px;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.delete-modal::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(7px);
+}
+
+.delete-modal-content {
+    padding: 38px 30px;
+    text-align: center;
+}
+
+.delete-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 22px;
+
+    color: #FF8585;
+    background: rgba(217, 74, 74, 0.13);
+
+    border: 1px solid rgba(217, 74, 74, 0.4);
+    border-radius: 50%;
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.delete-modal h2 {
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.delete-modal p {
+    color: #BAC8D0;
+    line-height: 1.7;
+}
+
+.delete-modal strong {
+    color: #35E0CC;
+}
+
+.delete-warning {
+    margin-top: 12px;
+    color: #D9B65D !important;
+    font-size: 0.87rem;
+}
+
+.delete-modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.delete-modal-actions .btn {
+    flex: 1;
+}
+
+#deletePropertyMessage,
+#deleteFormMessage {
+    margin-top: 18px;
+    color: #D9B65D;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .delete-modal-content {
+        padding: 28px 20px;
+    }
+
+    .delete-modal-actions {
+        flex-direction: column;
+    }
+}
+
+
+.property-delete-btn {
+    margin: 0 23px 23px;
+    width: calc(100% - 46px);
+}
+
