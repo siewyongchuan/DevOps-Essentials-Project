@@ -175,5 +175,24 @@ function createPropertyCard(property) {
     card.appendChild(image);
     card.appendChild(details);
 
+
+    // Allow users to click the property card to edit it
+card.classList.add('editable-property-card');
+card.setAttribute('role', 'button');
+card.setAttribute('tabindex', '0');
+card.setAttribute('aria-label', 'Edit ' + property.title);
+
+card.addEventListener('click', function () {
+    window.openUpdateModal(property);
+});
+
+// Allow keyboard users to open the popup
+card.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        window.openUpdateModal(property);
+    }
+});
+
     return card;
 }
