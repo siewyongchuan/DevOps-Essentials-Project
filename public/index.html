@@ -82,7 +82,7 @@
                         <input type="number" id="searchMaxPrice" min="0" placeholder="Any price">
                     </div>
 
-                    <button type="button" id="searchButton" class="btn btn-primary">
+                    <button type="button" id="searchButton" class="btn btn-primary" disabled>
                         Search
                     </button>
 
@@ -124,7 +124,7 @@
 
                         <label for="sortProperties">Sort by:</label>
 
-                        <select id="sortProperties">
+                        <select id="sortProperties" disabled>
                             <option value="default">Default</option>
                             <option value="price-low">
                                 Price: Low to High
@@ -140,10 +140,152 @@
 
 
                 <!--
-                Properties loaded from JSON
+                    MEMBER 2: VIEW PROPERTIES
+
+                    This container will eventually display
+                    properties loaded from properties.json
+                    through the Node.js backend.
+
+                    The cards below are temporary examples.
                 -->
 
-                <div id="property-list" class="property-grid"></div>
+                <div id="property-list" class="property-grid">
+
+                    <!-- Sample Property 1 -->
+                    <article class="property-card">
+
+                        <div class="property-image">
+                            <div class="image-placeholder">
+                                <span>⌂</span>
+                                <p>Property Image</p>
+                            </div>
+
+                            <span class="property-badge">HDB</span>
+                        </div>
+
+                        <div class="property-details">
+
+                            <h3>3-Room HDB Flat</h3>
+
+                            <p class="property-location">
+                                Tampines, Singapore
+                            </p>
+
+                            <p class="property-description">
+                                A comfortable HDB flat located
+                                near public transport and amenities.
+                            </p>
+
+                            <div class="property-info">
+                                <span>2 Bedrooms</span>
+                                <span>HDB</span>
+                            </div>
+
+                            <div class="property-footer">
+                                <span class="property-price">
+                                    $450,000
+                                </span>
+
+                                <span class="property-status">
+                                    Available
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Sample Property 2 -->
+                    <article class="property-card">
+
+                        <div class="property-image">
+                            <div class="image-placeholder">
+                                <span>⌂</span>
+                                <p>Property Image</p>
+                            </div>
+
+                            <span class="property-badge">Condo</span>
+                        </div>
+
+                        <div class="property-details">
+
+                            <h3>Modern Condominium</h3>
+
+                            <p class="property-location">
+                                Bedok, Singapore
+                            </p>
+
+                            <p class="property-description">
+                                A modern condominium with
+                                spacious rooms and nearby facilities.
+                            </p>
+
+                            <div class="property-info">
+                                <span>3 Bedrooms</span>
+                                <span>Condominium</span>
+                            </div>
+
+                            <div class="property-footer">
+                                <span class="property-price">
+                                    $1,250,000
+                                </span>
+
+                                <span class="property-status">
+                                    Available
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Sample Property 3 -->
+                    <article class="property-card">
+
+                        <div class="property-image">
+                            <div class="image-placeholder">
+                                <span>⌂</span>
+                                <p>Property Image</p>
+                            </div>
+
+                            <span class="property-badge">Apartment</span>
+                        </div>
+
+                        <div class="property-details">
+
+                            <h3>City View Apartment</h3>
+
+                            <p class="property-location">
+                                Queenstown, Singapore
+                            </p>
+
+                            <p class="property-description">
+                                A convenient apartment with
+                                easy access to shops and MRT stations.
+                            </p>
+
+                            <div class="property-info">
+                                <span>2 Bedrooms</span>
+                                <span>Apartment</span>
+                            </div>
+
+                            <div class="property-footer">
+                                <span class="property-price">
+                                    $780,000
+                                </span>
+
+                                <span class="property-status">
+                                    Available
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
 
 
                 <!-- Empty State for Future Search -->
@@ -288,7 +430,6 @@
         </div>
 
     </footer>
-<script src ="js/view-properties.js"></script>
 
 
 
