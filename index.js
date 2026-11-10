@@ -21,6 +21,10 @@ app.post('/add-property', addProperty);
 const { viewProperties } = require('./utils/QiHoongReadUtil');
 app.get('/view-properties', viewProperties);
 
+// Han Xi: update properties
+const { updateProperty } = require('./utils/HanXiUpdateUtil');
+app.put('/update-property/:id', updateProperty);
+
 // Main homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', startPage));

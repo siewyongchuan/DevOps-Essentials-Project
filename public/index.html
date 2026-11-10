@@ -145,7 +145,7 @@
 
                 <div id="property-list" class="property-grid">
 
-                
+
                 </div>
 
 
@@ -241,6 +241,8 @@
 
         </section>
 
+        
+
 
         <!-- About Section -->
         <section id="about" class="about-section">
@@ -293,9 +295,89 @@
     </footer>
 
 
+    <!-- Edit Property Popup -->
+<dialog id="editPropertyModal" class="edit-modal">
 
-<script src="js/add-property.js"></script>
-<script src="js/view-property.js"></script>
+    <div class="edit-modal-content">
+
+        <div class="edit-modal-header">
+            <div>
+                <h2>Edit Property</h2>
+                <p>Update your property details below.</p>
+            </div>
+
+            <button type="button" id="closeEditModal"
+                    class="edit-close-btn"
+                    aria-label="Close popup">
+                &times;
+            </button>
+        </div>
+
+        <form id="updatePropertyForm" class="property-form">
+
+            <input type="hidden" id="updatePropertyId">
+
+            <div class="form-group">
+                <label for="updateTitle">Property Title</label>
+                <input type="text" id="updateTitle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="updateLocation">Location</label>
+                <input type="text" id="updateLocation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="updatePrice">Price (SGD)</label>
+                <input type="number" id="updatePrice"
+                       min="0.01" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="updateType">Property Type</label>
+                <select id="updateType" required>
+                    <option value="HDB">HDB</option>
+                    <option value="Condo">Condominium</option>
+                    <option value="Landed">Landed</option>
+                    <option value="Apartment">Apartment</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="updateBedrooms">Bedrooms</label>
+                <input type="number" id="updateBedrooms"
+                       min="0" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="updateDescription">Description</label>
+                <textarea id="updateDescription"
+                          rows="4" required></textarea>
+            </div>
+
+            <p id="updatePropertyMessage"
+               role="status" aria-live="polite"></p>
+
+            <div class="edit-modal-actions">
+                <button type="button" id="cancelEditModal"
+                        class="btn btn-secondary">
+                    Cancel
+                </button>
+
+                <button type="submit" class="btn btn-primary">
+                    Save Changes
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</dialog>
+
+    <script src="js/add-property.js"></script>
+    <script src="js/view-property.js"></script>
+    <script src="js/update-property.js"></script>
 
 </body>
 

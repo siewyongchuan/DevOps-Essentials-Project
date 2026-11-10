@@ -1030,3 +1030,201 @@ select:disabled {
     color: #D9B65D;
     text-align: center;
 }
+
+/* ---------- Update Property Form ---------- */
+
+.property-form {
+    max-width: 620px;
+    margin: 30px auto 0;
+    padding: 35px;
+    background: #101921;
+    border: 1px solid rgba(53, 224, 204, 0.3);
+    border-radius: 20px;
+    text-align: left;
+}
+
+.property-form h3 {
+    color: #D9B65D;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.property-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.property-form .form-group label {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.property-form input,
+.property-form select,
+.property-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: #FFFFFF;
+    background: #192630;
+    border: 1px solid #38505A;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.property-form input:focus,
+.property-form select:focus,
+.property-form textarea:focus {
+    border-color: #35E0CC;
+    box-shadow: 0 0 0 3px rgba(53, 224, 204, 0.1);
+}
+
+.property-form input::placeholder,
+.property-form textarea::placeholder {
+    color: #92A3AD;
+}
+
+.property-form select option {
+    background: #192630;
+}
+
+.property-form .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-hint {
+    color: #D9B65D;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+#updatePropertyMessage {
+    margin-top: 15px;
+    color: #D9B65D;
+    text-align: center;
+}
+
+/* Clickable Property Cards */
+
+.editable-property-card {
+    cursor: pointer;
+}
+
+.editable-property-card:hover {
+    border-color: #35E0CC;
+    box-shadow: 0 15px 45px rgba(53, 224, 204, 0.18);
+}
+
+.editable-property-card:focus-visible {
+    outline: 3px solid #D9B65D;
+    outline-offset: 3px;
+}
+
+/* Edit Popup */
+
+.edit-modal {
+    width: min(580px, 92%);
+    max-height: 88vh;
+    margin: auto;
+    padding: 0;
+    overflow-y: auto;
+
+    background: #101921;
+    color: #FFFFFF;
+
+    border: 1px solid #35E0CC;
+    border-radius: 22px;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.edit-modal::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(7px);
+}
+
+.edit-modal-content {
+    padding: 30px;
+}
+
+.edit-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.edit-modal-header h2 {
+    color: #D9B65D;
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+}
+
+.edit-modal-header p {
+    color: #A6B8C2;
+    font-size: 0.9rem;
+}
+
+.edit-close-btn {
+    background: transparent;
+    border: none;
+
+    color: #FFFFFF;
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.edit-close-btn:hover {
+    color: #35E0CC;
+}
+
+/* Reuse existing form styling */
+
+.edit-modal .property-form {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.edit-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.edit-modal-actions .btn {
+    width: auto;
+    flex: 1;
+}
+
+#updatePropertyMessage {
+    margin-top: 12px;
+    color: #D9B65D;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .edit-modal-content {
+        padding: 22px;
+    }
+
+    .edit-modal-actions {
+        flex-direction: column;
+    }
+
+    .edit-modal-actions .btn {
+        width: 100%;
+    }
+}
