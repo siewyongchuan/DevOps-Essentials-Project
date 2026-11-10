@@ -965,3 +965,68 @@ select:disabled {
     }
 
 }
+
+
+/* Create Property Form */
+
+.property-form {
+    max-width: 620px;
+    margin: 30px auto 0;
+    padding: 35px;
+    background: #101921;
+    border: 1px solid rgba(53, 224, 204, 0.3);
+    border-radius: 20px;
+    text-align: left;
+}
+
+.property-form h3 {
+    color: #D9B65D;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: #FFFFFF;
+    background: #192630;
+    border: 1px solid #38505A;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #35E0CC;
+    box-shadow: 0 0 0 3px rgba(53, 224, 204, 0.1);
+}
+
+.form-group select option {
+    background: #192630;
+}
+
+.property-form .btn {
+    width: 100%;
+}
+
+#addPropertyMessage {
+    margin-top: 15px;
+    color: #D9B65D;
+    text-align: center;
+}

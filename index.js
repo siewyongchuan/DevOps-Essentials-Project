@@ -13,6 +13,11 @@ app.use(bodyParser.json());
 // Serve HTML, CSS, JS and images from public
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Aaryan
+const { addProperty } = require('./utils/AaryanCreateUtil');
+app.post('/add-property', addProperty);
+
+
 // Main homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', startPage));
