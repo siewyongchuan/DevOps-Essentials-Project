@@ -375,9 +375,54 @@
 
 </dialog>
 
+<!-- Delete Property Confirmation Popup -->
+<dialog id="deletePropertyModal" class="delete-modal">
+
+    <div class="delete-modal-content">
+
+        <div class="delete-icon">!</div>
+
+        <h2>Delete Property?</h2>
+
+        <p>
+            Are you sure you want to delete
+            <strong id="deletePropertyName"></strong>?
+        </p>
+
+        <p class="delete-warning">
+            This action cannot be undone.
+        </p>
+
+        <div class="delete-modal-actions">
+
+            <button
+                type="button"
+                id="cancelDeleteButton"
+                class="btn btn-secondary">
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmDeleteButton"
+                class="btn btn-danger">
+                Delete Property
+            </button>
+
+        </div>
+
+        <p id="deletePropertyMessage"
+           role="status"
+           aria-live="polite"></p>
+
+    </div>
+
+</dialog>
+
     <script src="js/add-property.js"></script>
     <script src="js/view-property.js"></script>
     <script src="js/update-property.js"></script>
+    <script src="js/delete-property.js"></script>
 
 </body>
 

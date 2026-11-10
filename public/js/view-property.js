@@ -194,5 +194,24 @@ card.addEventListener('keydown', function (event) {
     }
 });
 
+
+// Create Delete button for this property
+const deleteButton = document.createElement('button');
+
+deleteButton.type = 'button';
+deleteButton.className = 'btn btn-danger property-delete-btn';
+deleteButton.textContent = 'Delete';
+
+// Stop the card's Edit popup from opening
+deleteButton.addEventListener('click', function (event) {
+    event.stopPropagation();
+
+    window.openDeleteModal(property.id, property.title);
+});
+
+// Add button to the property card
+card.appendChild(deleteButton);
+
+
     return card;
 }

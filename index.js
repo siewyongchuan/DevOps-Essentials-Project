@@ -25,6 +25,10 @@ app.get('/view-properties', viewProperties);
 const { updateProperty } = require('./utils/HanXiUpdateUtil');
 app.put('/update-property/:id', updateProperty);
 
+// Siew Yong Chuan: delete properties
+const { deleteProperty } = require('./utils/SiewYongChuanDeleteUtil');
+app.delete('/delete-property/:id', deleteProperty);
+
 // Main homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', startPage));
