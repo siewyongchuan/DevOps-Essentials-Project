@@ -1,12 +1,398 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>DVOPS - Resource Management Web App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HomeFinder | Property Listings</title>
+
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    Welcome to my Resource Management Web Application. In this application,
-    users will get to manage resources.
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">⌂</span>
+                HomeFinder
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <a href="#add-property-section" class="btn btn-primary">
+                + List Property
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Homepage / Hero Section -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-label">YOUR NEXT HOME STARTS HERE</p>
+
+                <h1>
+                    Find Your Perfect
+                    <span>Home.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover properties across Singapore.
+                    Browse listings and find a place that
+                    suits your needs and budget.
+                </p>
+
+                <!-- Search UI - Member 2 will implement logic -->
+                <div class="search-box">
+
+                    <div class="search-field">
+                        <label for="searchLocation">Location</label>
+                        <input type="text" id="searchLocation" placeholder="e.g. Tampines">
+                    </div>
+
+                    <div class="search-field">
+                        <label for="searchType">Property Type</label>
+
+                        <select id="searchType">
+                            <option value="">All Types</option>
+                            <option value="HDB">HDB</option>
+                            <option value="Condo">Condominium</option>
+                            <option value="Landed">Landed</option>
+                            <option value="Apartment">Apartment</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field">
+                        <label for="searchMaxPrice">Max Price</label>
+
+                        <input type="number" id="searchMaxPrice" min="0" placeholder="Any price">
+                    </div>
+
+                    <button type="button" id="searchButton" class="btn btn-primary" disabled>
+                        Search
+                    </button>
+
+                </div>
+
+                <p class="search-note">
+                    Search functionality will be added later.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Property Listings Section -->
+        <section id="properties" class="properties-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">EXPLORE HOMES</p>
+                        <h2>Available Properties</h2>
+                        <p>
+                            Explore our collection of property listings.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Filter and Sorting Controls -->
+                <div class="property-toolbar">
+
+                    <p id="propertyCount">
+                        Sample property listings
+                    </p>
+
+                    <div class="toolbar-actions">
+
+                        <label for="sortProperties">Sort by:</label>
+
+                        <select id="sortProperties" disabled>
+                            <option value="default">Default</option>
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                    MEMBER 2: VIEW PROPERTIES
+
+                    This container will eventually display
+                    properties loaded from properties.json
+                    through the Node.js backend.
+
+                    The cards below are temporary examples.
+                -->
+
+                <div id="property-list" class="property-grid">
+
+                    <!-- Sample Property 1 -->
+                    <article class="property-card">
+
+                        <div class="property-image">
+                            <div class="image-placeholder">
+                                <span>⌂</span>
+                                <p>Property Image</p>
+                            </div>
+
+                            <span class="property-badge">HDB</span>
+                        </div>
+
+                        <div class="property-details">
+
+                            <h3>3-Room HDB Flat</h3>
+
+                            <p class="property-location">
+                                Tampines, Singapore
+                            </p>
+
+                            <p class="property-description">
+                                A comfortable HDB flat located
+                                near public transport and amenities.
+                            </p>
+
+                            <div class="property-info">
+                                <span>2 Bedrooms</span>
+                                <span>HDB</span>
+                            </div>
+
+                            <div class="property-footer">
+                                <span class="property-price">
+                                    $450,000
+                                </span>
+
+                                <span class="property-status">
+                                    Available
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Sample Property 2 -->
+                    <article class="property-card">
+
+                        <div class="property-image">
+                            <div class="image-placeholder">
+                                <span>⌂</span>
+                                <p>Property Image</p>
+                            </div>
+
+                            <span class="property-badge">Condo</span>
+                        </div>
+
+                        <div class="property-details">
+
+                            <h3>Modern Condominium</h3>
+
+                            <p class="property-location">
+                                Bedok, Singapore
+                            </p>
+
+                            <p class="property-description">
+                                A modern condominium with
+                                spacious rooms and nearby facilities.
+                            </p>
+
+                            <div class="property-info">
+                                <span>3 Bedrooms</span>
+                                <span>Condominium</span>
+                            </div>
+
+                            <div class="property-footer">
+                                <span class="property-price">
+                                    $1,250,000
+                                </span>
+
+                                <span class="property-status">
+                                    Available
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Sample Property 3 -->
+                    <article class="property-card">
+
+                        <div class="property-image">
+                            <div class="image-placeholder">
+                                <span>⌂</span>
+                                <p>Property Image</p>
+                            </div>
+
+                            <span class="property-badge">Apartment</span>
+                        </div>
+
+                        <div class="property-details">
+
+                            <h3>City View Apartment</h3>
+
+                            <p class="property-location">
+                                Queenstown, Singapore
+                            </p>
+
+                            <p class="property-description">
+                                A convenient apartment with
+                                easy access to shops and MRT stations.
+                            </p>
+
+                            <div class="property-info">
+                                <span>2 Bedrooms</span>
+                                <span>Apartment</span>
+                            </div>
+
+                            <div class="property-footer">
+                                <span class="property-price">
+                                    $780,000
+                                </span>
+
+                                <span class="property-status">
+                                    Available
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Empty State for Future Search -->
+                <div id="emptyState" class="empty-state" hidden>
+                    <h3>No properties found</h3>
+                    <p>
+                        Try adjusting your search criteria.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Property Placeholder -->
+        <section id="add-property-section" class="feature-section">
+
+            <div class="container feature-content">
+
+                <h2>Have a Property to List?</h2>
+
+                <p>
+                    Add your property to HomeFinder
+                    and make it available for others to browse.
+                </p>
+
+                <!--
+                    MEMBER 1: ADD PROPERTY
+
+                    Add property form and JavaScript
+                    functionality will be integrated here.
+                -->
+
+                <div id="add-property-container">
+                    <p class="feature-placeholder">
+                        Property listing form coming soon.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+
+            <div class="container">
+
+                <h2>About HomeFinder</h2>
+
+                <p>
+                    HomeFinder is a property listing web application
+                    developed as part of the DevOps Essentials project.
+                </p>
+
+                <p>
+                    The application allows users to manage and
+                    explore property listings through features such
+                    as adding, viewing, updating and deleting properties.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <h3>⌂ HomeFinder</h3>
+                <p>
+                    Find your next home with us.
+                </p>
+            </div>
+
+            <div>
+                <p>DevOps Essentials Project</p>
+                <p>Temasek Polytechnic</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>HomeFinder - Property Listing Web Application</p>
+        </div>
+
+    </footer>
+
+
+    <!--
+        Future individual frontend scripts:
+
+        Member 1: js/add-property.js
+        Member 2: js/view-properties.js
+        Member 3: js/update-property.js
+        Member 4: js/delete-property.js
+
+        Add script tags when the features are implemented.
+    -->
+
 </body>
 
 </html>
