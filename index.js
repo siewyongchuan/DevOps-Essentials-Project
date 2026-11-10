@@ -10,6 +10,10 @@ var startPage = "index.html";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//View Property by Qi Hoong
+const { viewProperties } = require('./utils/QiHoongReadUtil');
+app.get('/view-properties', viewProperties);
+
 // Serve HTML, CSS, JS and images from public
 app.use(express.static(path.join(__dirname, 'public')));
 
