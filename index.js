@@ -13,10 +13,13 @@ app.use(bodyParser.json());
 // Serve HTML, CSS, JS and images from public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Aaryan
+// Aaryan: add properties
 const { addProperty } = require('./utils/AaryanCreateUtil');
 app.post('/add-property', addProperty);
 
+// Qi Hoong: view properties
+const { viewProperties } = require('./utils/QiHoongReadUtil');
+app.get('/view-properties', viewProperties);
 
 // Main homepage
 app.get('/', (req, res) => {
